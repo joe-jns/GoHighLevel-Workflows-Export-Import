@@ -1,11 +1,12 @@
 # GoHighLevel Workflow API — Reconnaissance
 
-Source: live capture against `app.business-toolbox.com` (white-label GHL), tenant
-`locationId=vQ2IFiUBooR3e9F6hl1f`, 2026-05-18.
+Source: live capture against a white-labeled GHL instance, 2026.
+Identifiers in examples below (locationId, workflowId, etc.) have been
+genericized — your live data will use your own UUIDs.
 
 ## Architecture
 
-- White-label wrapper page: `https://app.business-toolbox.com/v2/location/{locationId}/automation/workflows`
+- White-label wrapper page: `https://<your-white-label-domain>/v2/location/{locationId}/automation/workflows`
 - Inside it, an `<iframe name="workflow-builder">` loads the real workflows SPA at
   `https://client-app-automation-workflows.leadconnectorhq.com/...`
 - The iframe makes all API calls to `https://backend.leadconnectorhq.com`.
@@ -40,9 +41,9 @@ Response shape:
 {
   "rows": [
     {
-      "_id": "fb7e5d48-...",
-      "id": "fb7e5d48-...",
-      "name": "AUTO | ...",
+      "_id": "<workflow-uuid>",
+      "id": "<workflow-uuid>",
+      "name": "Some workflow name",
       "type": "workflow" | "directory",
       "status": "published" | "draft",
       "parentId": "f8511591-..." | null,
@@ -68,8 +69,8 @@ GET https://backend.leadconnectorhq.com/workflow/{locationId}/{workflowId}
 Response shape:
 ```json
 {
-  "_id": "fb7e5d48-...",
-  "name": "AUTO | Chatbot — Entrée pipeline nouveau lead",
+  "_id": "<workflow-uuid>",
+  "name": "Example Workflow Name",
   "status": "published",
   "version": 10,
   "type": "workflow",

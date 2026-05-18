@@ -33,7 +33,7 @@ Out of scope:
 
 ```
 ┌────────────────────────────────────────────────────────────────┐
-│  Top page: app.business-toolbox.com (or any white-label)       │
+│  Top page: <your-white-label-domain> (or any white-label)       │
 │  ┌──────────────────────────────────────────────────────────┐  │
 │  │ iframe[name="workflow-builder"]                          │  │
 │  │ origin: client-app-automation-workflows.leadconnectorhq  │  │
@@ -180,8 +180,8 @@ Responsibilities:
   "exportedAt": "2026-05-19T22:00:00.000Z",
   "exporter": { "name": "ghl-workflow-exporter", "version": "0.1.0" },
   "source": {
-    "locationId": "vQ2IFiUBooR3e9F6hl1f",
-    "workflowId": "fb7e5d48-…",
+    "locationId": "<locationId>",
+    "workflowId": "<workflowId>",
     "host": "client-app-automation-workflows.leadconnectorhq.com"
   },
   "workflow": { /* full response from /workflow/{locId}/{workflowId} */ },
