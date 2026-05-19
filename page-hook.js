@@ -22,6 +22,16 @@
   function dispatch(detail) {
     try {
       window.dispatchEvent(new CustomEvent('ghl-export:capture', { detail }));
+      // Also expose the live token globally so console scripts and debug
+      // tools can read it without setting up their own fetch hook.
+      if (detail && detail.token) {
+        try {
+          window.__ghlExporterToken = detail.token;
+          const payload = JSON.parse(atob(detail.token.split('.')[1].replace(/-/g, '+').replace(/_/g, '/')));
+          window.__ghlExporterCompanyId = payload.company_id || null;
+          window.__ghlExporterUserId = payload.user_id || payload.sub || null;
+        } catch (_) {}
+      }
     } catch (e) {
       // Cloning failure (rare); ignore.
     }
