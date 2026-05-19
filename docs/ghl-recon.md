@@ -14,10 +14,25 @@ genericized — your live data will use your own UUIDs.
 
 ## Auth
 
-- Header `token-id: <Firebase JWT>` on every API request.
-- Header `channel: APP`.
-- Token is stored in the **iframe origin's** localStorage as `refreshedToken` (auto-refreshed by GHL every ~hour).
-- A content script running in the iframe origin can read it directly.
+Headers required on every API request:
+
+| Header | Value | Required by |
+|---|---|---|
+| `token-id` | The GHL backend bearer JWT (Firebase, audience `highlevel-backend`) | All endpoints |
+| `channel` | `APP` | All endpoints |
+| `source` | `WEB_USER` | **Required by `/marketplace/*` and `/workflows-marketplace/*` endpoints — they return 401 without it.** Optional for `/workflow/*` endpoints. |
+| `version` | `2021-04-15` | Same as `source` — required by marketplace endpoints. |
+
+**Important:** `localStorage.refreshedToken` is a **Firebase identity-toolkit
+refresh token** (audience `identitytoolkit.googleapis.com`), NOT the bearer
+the API accepts. The real bearer is the `token-id` value the SPA sends on
+each outgoing request — captured at runtime by our `page-hook.js`'s fetch
+wrap, then forwarded via `CustomEvent('ghl-export:capture').detail.token`.
+
+A content script in the iframe origin can ALSO read `localStorage.refreshedToken`
+directly, but it must then trade it for a bearer via
+`POST /oauth/2/login/signin/refresh?version=2&location_id=...` — easier to
+just intercept the live header.
 
 ## Endpoints
 
@@ -160,6 +175,61 @@ Stable signals to detect "we're on a GHL workflows page":
 1. Iframe with `name="workflow-builder"` whose `src` starts with `https://client-app-automation-workflows.leadconnectorhq.com/`
 2. URL path matches `/(v2/)?location/[^/]+/automation/workflows` OR `/location/[^/]+/workflow/[^/]+` (the latter is the builder route the wrapper rewrites to)
 3. Inside the iframe origin: the SPA loads at `client-app-automation-workflows.leadconnectorhq.com` — content scripts can match on this host directly.
+
+## Workflow primitives catalog (triggers / actions schemas)
+
+For tooling that needs to *understand* what a workflow can contain (validators,
+generators, schema-driven editors), the catalog of available triggers and
+actions — including their input-field schemas — lives here:
+
+```
+GET /workflows-marketplace/location/{locationId}/assets?workflowTypes=default,contacts
+```
+
+Response (truncated):
+```json
+{
+  "actions": [
+    {
+      "appName": "contact",
+      "actions": [
+        {
+          "_id": "...",
+          "key": "add_contact_tag",
+          "name": "Add Contact Tag",
+          "inputs": [
+            { "field": "tags", "title": "Tags", "fieldType": "tag_input",
+              "required": true, "validations": [...], "options": [...] }
+          ]
+        }
+      ]
+    }
+  ],
+  "triggers": [
+    {
+      "appName": "contact",
+      "triggers": [
+        { "key": "contact_created", "name": "Contact Created",
+          "inputs": [ { "field": "filters", "fieldType": "filter_builder" } ] }
+      ]
+    }
+  ]
+}
+```
+
+In our test tenant: 241 action types across 45 apps, 104 triggers across 31 apps.
+
+Companion endpoints:
+- `GET /workflows-marketplace/integration-apps?locationId={locId}` — 3rd-party
+  marketplace apps with their OAuth config + rate-limit metadata (~1 MB).
+- `GET /marketplace/core/search/module?type=actions|triggers&limit=500` —
+  full marketplace catalog including non-installed apps (~10 MB for actions).
+- `…&isInstalled=true` variant — filters to apps installed in this tenant.
+
+Helper: `scripts/dump-primitives-catalog.js` is a console-pasteable script
+that captures all of the above into a single
+`ghl-primitives-catalog-<date>.json` file. Run it on a GHL workflows page,
+in the `workflow-builder` iframe context.
 
 ## Write endpoints (for import)
 
