@@ -21,9 +21,13 @@ In scope:
 - Inject an "Export ▾" dropdown button in the workflows toolbar.
 - Export formats: ZIP of one JSON per workflow, or a single combined JSON.
 
-Out of scope:
-- Re-importing JSONs back into GHL (no public import API).
-- Modifying workflows (read-only export).
+Out of scope (at the time this spec was written — see note below):
+- ~~Re-importing JSONs back into GHL (no public import API).~~
+  **Superseded.** A second recon round (2026-05-19) found undocumented
+  POST/PUT endpoints used internally by the SPA. Import was subsequently
+  implemented; see the "Write endpoints (for import)" section in
+  `docs/ghl-recon.md` and the import code in `content.js`.
+- ~~Modifying workflows (read-only export).~~ Same — import now writes.
 - Capturing canvas/layout positions from the Firebase Storage `fileUrl`
   (the `workflowData.templates[]` linked structure is sufficient for editing).
 - Capturing per-step stats (`enroll-stats-cache`, `count-per-step`).

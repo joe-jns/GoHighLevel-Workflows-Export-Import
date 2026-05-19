@@ -117,10 +117,11 @@ Schemas are documented in `docs/ghl-recon.md` and live samples in `docs/recon-sa
 
 ## Out of scope for v1
 
-- Re-importing JSONs back into GHL (no public import API exists).
 - Canvas/layout positions (would need to fetch the Firebase Storage `fileUrl`).
 - Sticky notes.
 - Per-step enrollment stats.
+- Cross-tenant ID remapping (pipeline / calendar / custom field / user IDs in
+  imported workflows still point at the source tenant — see Import caveats above).
 
 ## License
 
