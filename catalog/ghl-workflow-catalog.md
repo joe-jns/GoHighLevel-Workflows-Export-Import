@@ -1,8 +1,13 @@
 # GHL Workflow Catalog
 
-Captured: 2026-05-19 · 241 action types · 104 trigger types
+Captured: 2026-05-19 · merged: 2026-05-26
+313 action types · 159 trigger types
 
-Use `catalog/ghl-workflow-catalog.json` as input when generating workflows with Claude.
+Sources:
+- **Marketplace assets**: third-party integrations + some native (richest input schemas).
+- **SPA bundle**: builder primitives + core triggers (icons + categories; `inputs[]` empty because each type uses a bespoke Vue config component).
+
+Entries marked `(bundle)` come from the SPA bundle and have `inputs: []`. To learn their `attributes` shape, see `example` on each entry or export real workflows that use them.
 
 ---
 
@@ -270,18 +275,23 @@ Use `catalog/ghl-workflow-catalog.json` as input when generating workflows with 
 ### Voice AI (1)
 - `voice_ai_outbound_call` · **Voice AI Outbound Call** — Place an outbound call from your AI Agent
 
-### affiliate (2)
+### affiliate (6)
 - `am-add-lead` · **Add Leads under an Affiliate** — Adds leads under the selected affiliate campaign and affiliate
 - `am-add-manual-commission` · **Add manual sales for an Affiliate** — Adds manual sales for the selected affiliate campaign and affiliate. The commissions will be calcula
+- `add_to_affiliate_manager` · **add_to_affiliate_manager** _(bundle)_
+- `update_affiliate` · **update_affiliate** _(bundle)_
+- `add_to_affiliate_campaign` · **add_to_affiliate_campaign** _(bundle)_
+- `remove_from_affiliate_campaign` · **remove_from_affiliate_campaign** _(bundle)_
 
-### appointments (2)
+### appointments (3)
 - `calendars_create_appointment_note` · **Create Appointment / Booking Note** — Create note for a calendar appointment, service booking or rental booking
 - `calendars_generate_one_time_booking_link` · **Generate One Time Booking Link** — Generate one time booking link for a calendar
+- `update_appointment_status` · **update_appointment_status** _(bundle)_
 
 ### certificates (1)
 - `issue_certificates_workflow` · **Issue certificate** — Choose a certificate to send. The selected certificate template will be sent out as email. (* Some c
 
-### communication (12)
+### communication (28)
 - `whatsapp_24h_window` · **WhatsApp: Customer Service Window Check** — When a WhatsApp user sends you a message, a 24-hour Customer Service Window is open, during which yo
 - `send_whatsapp_flow` · **WhatsApp: Send Flows** — Send WhatsApp Flows to your customers, allowing them to seamlessly book appointments directly on you
 - `live_chat_response` · **Send Live Chat Message** — Automatically send response message to the live chat
@@ -294,8 +304,24 @@ Use `catalog/ghl-workflow-catalog.json` as input when generating workflows with 
 - `whatsapp_media` · **WhatsApp Media** — Upload your attachment for the WhatsApp message. Ensure the file meets WhatsApp's supported formats 
 - `whatsapp_interactive_messages` · **WhatsApp Interactive Messages** — Send Interactive Messages on WhatsApp from Workflows
 - `tiktok-dm` · **TikTok Interactive Messenger** — Sends a TikTok message to the contact (contact needs to have previously messaged a connected TikTok 
+- `email` · **send_email** _(bundle)_
+- `sms` · **send_sms** _(bundle)_
+- `slack_message` · **slack** _(bundle)_
+- `call` · **call** _(bundle)_
+- `voicemail` · **voicemail** _(bundle)_
+- `messenger` · **messenger** _(bundle)_
+- `instagram-dm` · **instagram_dm** _(bundle)_
+- `manual-sms` · **manual_sms** _(bundle)_
+- `manual-call` · **manual_call** _(bundle)_
+- `gmb` · **gmb_messaging** _(bundle)_
+- `internal_notification` · **send_internal_notification** _(bundle)_
+- `review_request` · **send_review_request** _(bundle)_
+- `conversation_ai` · **conversation_ai** _(bundle)_
+- `fb_interactive_messenger` · **fb_interactive_messenger** _(bundle)_
+- `ig_interactive_messenger` · **ig_interactive_messenger** _(bundle)_
+- `respond_on_comment` · **reply_in_comments** _(bundle)_
 
-### contact (11)
+### contact (21)
 - `edit_conversation` · **Edit Conversation** — workflow.asideSection.description.editConversation
 - `task-notification` · **Add Task** — workflow.asideSection.description.addTask
 - `internal-delete-contact` · **Delete Contact** — This action permanently deletes the contact from this account and all workflows.
@@ -307,20 +333,70 @@ Use `catalog/ghl-workflow-catalog.json` as input when generating workflows with 
 - `remove_contact_tag_tool` · **Remove Contact Tags** — Used for removing tags to the existing contact
 - `lc_merge_contact` · **Merge Contact** — Identifies duplicate contacts and merges the newer contact record into the oldest existing record. O
 - `contact_email_verification` · **Email Verification** — Verify the email before sending
+- `create_update_contact` · **Create Update Contact** _(bundle)_
+- `find_contact` · **Find Contact** _(bundle)_
+- `update_contact_field` · **update_contact_field** _(bundle)_
+- `add_contact_tag` · **add_contact_tag** _(bundle)_
+- `remove_contact_tag` · **remove_contact_tag** _(bundle)_
+- `assign_user` · **assign_to_user** _(bundle)_
+- `remove_assigned_user` · **remove_assigned_user** _(bundle)_
+- `dnd_contact` · **set_contact_dnd** _(bundle)_
+- `add_notes` · **add_to_notes** _(bundle)_
+- `copy_contact_to_subaccount` · **Copy Contact To Subaccount** _(bundle)_
 
 ### customObjects (1)
 - `find_associated_record` · **Find Associated Record** — Find an associated record using selected fields and filters.
 
-### eliza (0)
+### custom_objects (3)
+- `create_custom_object` · **create_object** _(bundle)_
+- `update_custom_object` · **update_object** _(bundle)_
+- `clear_custom_object_fields` · **clear_object_fields** _(bundle)_
 
-### internal (0)
+### eliza (2)
+- `add_appointment_booking_ai_bot` · **ai_appointment_booking_bot** _(bundle)_
+- `send_to_eliza` · **send_to_eliza_agent_platform** _(bundle)_
 
-### ivr (0)
+### external_ai_models (1)
+- `chatgpt` · **gpt_by_open_ai** _(bundle)_
 
-### marketing (1)
+### internal (16)
+- `if_else` · **if_else** _(bundle)_
+- `wait` · **wait** _(bundle)_
+- `workflow_goal` · **Workflow Goal** _(bundle)_
+- `workflow_split` · **Workflow Split** _(bundle)_
+- `update_custom_value` · **update_custom_value** _(bundle)_
+- `goto` · **Goto** _(bundle)_
+- `datetime_formatter` · **Datetime Formatter** _(bundle)_
+- `number_formatter` · **number_formatter** _(bundle)_
+- `math_operation` · **math_operation** _(bundle)_
+- `event_start_date` · **set_event_start_date** _(bundle)_
+- `add_to_workflow` · **add_to_workflow** _(bundle)_
+- `remove_from_workflow` · **remove_from_workflow** _(bundle)_
+- `array_functions` · **array_functions** _(bundle)_
+- `drip` · **drip** _(bundle)_
+- `text_formatter` · **text_formatter** _(bundle)_
+- `custom_code` · **custom_code** _(bundle)_
+
+### ivr (5)
+- `ivr_gather` · **gather_input_on_call** _(bundle)_
+- `ivr_say` · **say_or_play_message** _(bundle)_
+- `ivr_connect_call` · **connect_to_call** _(bundle)_
+- `ivr_hangup` · **end_call** _(bundle)_
+- `ivr_collect_voicemail` · **record_voicemail** _(bundle)_
+
+### marketing (6)
 - `generate_marketing_audit_report` · **Generate Marketing Audit Report** — Audit reports generated by this action will appear in your Prospecting Dashboard (Marketing → Prospe
+- `google_analytics` · **add_to_google_analytics** _(bundle)_
+- `google_adword` · **add_to_google_ads** _(bundle)_
+- `facebook_add_to_custom_audience` · **facebook_add_to_custom_audience** _(bundle)_
+- `facebook_remove_from_custom_audience` · **facebook_remove_from_custom_audience** _(bundle)_
+- `facebook_conversion_api` · **facebook_conversion_api** _(bundle)_
 
-### opportunity (7)
+### membership (2)
+- `membership_grant_offer` · **course_grant_offer** _(bundle)_
+- `membership_revoke_offer` · **course_revoke_offer** _(bundle)_
+
+### opportunity (9)
 - `internal-add-opportunity-owner` · **Add Owner to Opportunity** — Assign a new owner to the opportunity. If contact and opportunity owners are synced, both will be up
 - `internal-remove-opportunity-owner` · **Remove Owner from Opportunity** — Removes any assigned users leaving the opportunity unassigned.
 - `internal-add-opportunities-followers` · **Add Follower(s) to Opportunity** — Adds the specified users as followers to the Opportunities.
@@ -328,6 +404,8 @@ Use `catalog/ghl-workflow-catalog.json` as input when generating workflows with 
 - `find_opportunity` · **Find Opportunity** — Find an opportunity with matching values
 - `internal_create_opportunity` · **Create Opportunity** — Creates a new opportunity using the fields below. If duplicate opportunities are disabled and an opp
 - `internal_update_opportunity` · **Update opportunity** — If a 'Find Opportunity' action is present, it updates the matching record. Otherwise, it updates the
+- `create_opportunity` · **create_update_opportunity** _(bundle)_
+- `remove_opportunity` · **remove_opportunity** _(bundle)_
 
 ### payment (4)
 - `payments_create_invoice` · **Send Invoice**
@@ -335,9 +413,16 @@ Use `catalog/ghl-workflow-catalog.json` as input when generating workflows with 
 - `proposals_estimates_send_document` · **Send Documents & Contracts** — Automatically send documents & contracts templates
 - `create_recurring_invoice` · **Send Recurring Invoice**
 
-### send_data (0)
+### payments (1)
+- `stripe_one_time_charge` · **stripe_one_time_charge** _(bundle)_
 
-### workflow_ai (0)
+### send_data (3)
+- `webhook` · **webhook** _(bundle)_
+- `custom_webhook` · **custom_webhook** _(bundle)_
+- `google_sheets` · **google_sheets** _(bundle)_
+
+### workflow_ai (1)
+- `ai_agent` · **ai_agent** _(bundle)_
 
 ## Triggers by app
 
@@ -456,9 +541,14 @@ Use `catalog/ghl-workflow-catalog.json` as input when generating workflows with 
 - `affiliate_campaign_enroll` · **Affiliate enrolled in campaign** — Runs when a Affiliate will be added in the campaign.
 - `affiliate_new_lead` · **Lead Created** — Runs when a new affiliate lead is created
 
-### appointments (2)
+### affiliates (1)
+- `affiliate_created` · **Affiliate Created** _(bundle)_
+
+### appointments (4)
 - `service_booking` · **Service Booking** — Triggers the workflow when a Service Booking is created or updated.
 - `rental_booking` · **Rental Booking** — Triggers the workflow when a Rental Booking is created or updated.
+- `appointment` · **Appointment Status** _(bundle)_
+- `customer_appointment` · **Customer Booked Appointment** _(bundle)_
 
 ### certificates (1)
 - `certificates_issued_workflow` · **Certificates Issued** — Runs when a certificate is issued.
@@ -475,11 +565,35 @@ Use `catalog/ghl-workflow-catalog.json` as input when generating workflows with 
 - `private_channel_access_revoked` · **Private Channel Access Revoked** — Community Private Channel Access Revoked trigger
 - `user_group_gamification_level_changed` · **Community Group Member Leaderboard Level Changed** — This trigger enables you to create automated actions when a community group member's gamification le
 
-### contact (2)
+### contact (12)
 - `task_completed` · **Task Completed** — Task completed trigger.
 - `contact_engagement_score` · **Contact Engagement Score** — Use this trigger to initiate workflow when a contact's engagement score meets a specific condition
+- `birthday_reminder` · **Birthday Reminder** _(bundle)_
+- `contact_changed` · **Contact Changed** _(bundle)_
+- `contact_created` · **Contact Created** _(bundle)_
+- `dnd_contact` · **Contact Dnd** _(bundle)_
+- `contact_tag` · **Contact Tag** _(bundle)_
+- `custom_date_reminder` · **Custom Date Reminder** _(bundle)_
+- `note_add` · **Note Added** _(bundle)_
+- `note_changed` · **Note Changed** _(bundle)_
+- `task_added` · **Task Added** _(bundle)_
+- `task_due_date_reminder` · **Task Reminder** _(bundle)_
 
-### events (8)
+### courses (12)
+- `category_started` · **Category Started** _(bundle)_
+- `category_completed` · **Category Completed** _(bundle)_
+- `lesson_started` · **Lesson Started** _(bundle)_
+- `lesson_completed` · **Lesson Completed** _(bundle)_
+- `membership_contact_created` · **Membership New Signup** _(bundle)_
+- `offer_access_granted` · **Offer Access Granted** _(bundle)_
+- `offer_access_removed` · **Offer Access Removed** _(bundle)_
+- `product_access_granted` · **Product Access Granted** _(bundle)_
+- `product_access_removed` · **Product Access Removed** _(bundle)_
+- `product_started` · **Product Started** _(bundle)_
+- `product_completed` · **Product Completed** _(bundle)_
+- `user_log_in` · **User Login** _(bundle)_
+
+### events (23)
 - `messaging_errors` · **Messaging Error - SMS** — Triggered based on the error received for an undelivered message. This can be used for taking releva
 - `linkedin_form_submitted` · **LinkedIn Lead Form Submitted** — LinkedIn Lead Form Submitted Trigger.
 - `funnel_website_pageview` · **Funnel/Website PageView** — Runs when a contact has viewed a page
@@ -488,14 +602,37 @@ Use `catalog/ghl-workflow-catalog.json` as input when generating workflows with 
 - `new_prospect_received_workflow` · **Prospect Generated** — This trigger allows you to create automated actions when new prospects are received. You can filter 
 - `whatsapp_referral` · **Click to WhatsApp Ads** — Triggers when an inbound WhatsApp message is received via a referral message.
 - `external_tracking` · **External Tracking Event** — Runs when external tracking form is viewed/submitted
+- `inbound_webhook` · **Inbound Webhook** _(bundle)_
+- `scheduler_trigger` · **Scheduler** _(bundle)_
+- `call_status` · **Call Details** _(bundle)_
+- `mailgun_email_event` · **Email Events** _(bundle)_
+- `customer_reply` · **Customer Replied** _(bundle)_
+- `inbound_trigger` · **Inbound Trigger** _(bundle)_
+- `conv_ai_trigger` · **Conv Ai Trigger** _(bundle)_
+- `conv_ai_autonomous_trigger` · **Conv Ai Autonomous Trigger** _(bundle)_
+- `form_submission` · **Form Submitted** _(bundle)_
+- `survey_submission` · **Survey Submitted** _(bundle)_
+- `trigger_link` · **Trigger Link Clicked** _(bundle)_
+- `facebook_lead_gen` · **Facebook Lead Form Submitted** _(bundle)_
+- `tik_tok_form_submitted` · **Tiktok Form Submitted** _(bundle)_
+- `video_event` · **Video Tracking** _(bundle)_
+- `validation_error` · **Number Validation** _(bundle)_
 
-### ivr (0)
+### fb_ig_events (2)
+- `facebook_comment_on_post` · **Facebook Comment On Post** _(bundle)_
+- `ig_comment_on_post` · **Instagram Comment On Post** _(bundle)_
 
-### membership (0)
+### ivr (1)
+- `ivr_incoming_call` · **Start Ivr Trigger** _(bundle)_
 
-### opportunities (0)
+### opportunities (5)
+- `opportunity_status_changed` · **Opportunity Status Changed** _(bundle)_
+- `opportunity_created` · **Opportunity Created** _(bundle)_
+- `opportunity_changed` · **Opportunity Changed** _(bundle)_
+- `pipeline_stage_updated` · **Pipeline Stage Changed** _(bundle)_
+- `opportunity_decay` · **Stale Opportunities** _(bundle)_
 
-### payments (8)
+### payments (12)
 - `proposal_estimate_update` · **Documents & Contracts** — Documents & Contracts Trigger
 - `estimate_update` · **Estimates** — Estimates Trigger
 - `subscription` · **Subscription** — Runs when a new subscription is created or subscription status changes
@@ -504,5 +641,12 @@ Use `catalog/ghl-workflow-catalog.json` as input when generating workflows with 
 - `coupon_redemption_limit_reached` · **Coupon Redemption Limit Reached** — Fires when a coupon code reaches its maximum allowed number of redemptions. Should be triggered afte
 - `coupon_code_expired` · **Coupon Code Expired** — Fires when a coupon code reaches its scheduled expiration date and becomes inactive.
 - `coupon_code_redeemed` · **Coupon Code Redeemed** — Fires when a coupon code is successfully redeemed in a completed transaction.
+- `invoice` · **Invoice** _(bundle)_
+- `payment_received` · **Payment Received** _(bundle)_
+- `two_step_form_submission` · **Order Form Submission** _(bundle)_
+- `order_submission` · **Order Submitted** _(bundle)_
 
-### shopify (0)
+### shopify (3)
+- `shopify_abandoned_cart` · **Abandoned Checkout** _(bundle)_
+- `shopify_order_placed` · **Order Placed** _(bundle)_
+- `shopify_order_fulfilled` · **Order Fulfilled** _(bundle)_

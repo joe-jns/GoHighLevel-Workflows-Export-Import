@@ -14,7 +14,7 @@ Thumbs.db
 *~
 
 # Loose captures that may end up at repo root during recon
-ghl-*.json
+/ghl-*.json
 *.har
 
 # Logs

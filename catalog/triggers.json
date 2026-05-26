@@ -1,14 +1,10 @@
 {
   "stats": {
-    "contact": 2,
-    "events": 8,
-    "appointments": 2,
-    "opportunities": 0,
+    "contact": 12,
+    "events": 23,
+    "appointments": 4,
     "affiliate": 3,
-    "membership": 0,
-    "payments": 8,
-    "shopify": 0,
-    "ivr": 0,
+    "payments": 12,
     "communities": 5,
     "certificates": 1,
     "Google Forms": 1,
@@ -30,7 +26,13 @@
     "Typeform": 1,
     "Apify": 2,
     "Cal.com": 6,
-    "Todoist": 3
+    "Todoist": 3,
+    "opportunities": 5,
+    "affiliates": 1,
+    "courses": 12,
+    "shopify": 3,
+    "ivr": 1,
+    "fb_ig_events": 2
   },
   "triggers": {
     "task_completed": {
@@ -3477,6 +3479,886 @@
       "type": "INTEGRATION_AI",
       "filters": [],
       "customVarPrefix": "lc_todoist_new_project"
+    },
+    "birthday_reminder": {
+      "key": "birthday_reminder",
+      "name": "Birthday Reminder",
+      "nameI18nKey": "birthday_reminder",
+      "descriptionI18nKey": "runs_on_each_contacts_birthday_at",
+      "app": "contact",
+      "description": null,
+      "icon": "heroicons-outline:cake",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "contact_changed": {
+      "key": "contact_changed",
+      "name": "Contact Changed",
+      "nameI18nKey": "contact_changed",
+      "descriptionI18nKey": "fires_when_the_chosen_contact_fields",
+      "app": "contact",
+      "description": null,
+      "icon": "heroicons-outline:users",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "contact_created": {
+      "key": "contact_created",
+      "name": "Contact Created",
+      "nameI18nKey": "contact_created",
+      "descriptionI18nKey": "activates_the_moment_a_new_contact",
+      "app": "contact",
+      "description": null,
+      "icon": "heroicons-outline:user-add",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "dnd_contact": {
+      "key": "dnd_contact",
+      "name": "Contact Dnd",
+      "nameI18nKey": "contact_dnd",
+      "descriptionI18nKey": "triggers_when_donotdisturb_is_enabled_or",
+      "app": "contact",
+      "description": null,
+      "icon": "heroicons-outline:x-circle",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "contact_tag": {
+      "key": "contact_tag",
+      "name": "Contact Tag",
+      "nameI18nKey": "contact_tag",
+      "descriptionI18nKey": "runs_when_the_specified_tag_is",
+      "app": "contact",
+      "description": null,
+      "icon": "heroicons-outline:tag",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "custom_date_reminder": {
+      "key": "custom_date_reminder",
+      "name": "Custom Date Reminder",
+      "nameI18nKey": "custom_date_reminder",
+      "descriptionI18nKey": "enrolls_contacts_on_a_date_stored",
+      "app": "contact",
+      "description": null,
+      "icon": "heroicons-outline:calendar",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "note_add": {
+      "key": "note_add",
+      "name": "Note Added",
+      "nameI18nKey": "note_added",
+      "descriptionI18nKey": "fires_whenever_a_new_note_is",
+      "app": "contact",
+      "description": null,
+      "icon": "heroicons-outline:document",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "note_changed": {
+      "key": "note_changed",
+      "name": "Note Changed",
+      "nameI18nKey": "note_changed",
+      "descriptionI18nKey": "activates_when_an_existing_note_is",
+      "app": "contact",
+      "description": null,
+      "icon": "heroicons-outline:document-duplicate",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "task_added": {
+      "key": "task_added",
+      "name": "Task Added",
+      "nameI18nKey": "task_added",
+      "descriptionI18nKey": "triggers_when_a_task_is_created",
+      "app": "contact",
+      "description": null,
+      "icon": "heroicons-outline:check",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "task_due_date_reminder": {
+      "key": "task_due_date_reminder",
+      "name": "Task Reminder",
+      "nameI18nKey": "task_reminder",
+      "descriptionI18nKey": "runs_at_the_reminder_time_of",
+      "app": "contact",
+      "description": null,
+      "icon": "heroicons-outline:bell",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "inbound_webhook": {
+      "key": "inbound_webhook",
+      "name": "Inbound Webhook",
+      "nameI18nKey": "inbound_webhook",
+      "descriptionI18nKey": "starts_the_workflow_when_an_external",
+      "app": "events",
+      "description": null,
+      "icon": "heroicons-solid:rss",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "green",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "scheduler_trigger": {
+      "key": "scheduler_trigger",
+      "name": "Scheduler",
+      "nameI18nKey": "Scheduler",
+      "descriptionI18nKey": null,
+      "app": "events",
+      "description": null,
+      "icon": "heroicons-outline:clock",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "green",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "call_status": {
+      "key": "call_status",
+      "name": "Call Details",
+      "nameI18nKey": "call_details",
+      "descriptionI18nKey": "fires_after_a_call_ends_with",
+      "app": "events",
+      "description": null,
+      "icon": "heroicons-outline:phone",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "green",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "mailgun_email_event": {
+      "key": "mailgun_email_event",
+      "name": "Email Events",
+      "nameI18nKey": "email_events",
+      "descriptionI18nKey": "triggers_on_open_click_bounce_or",
+      "app": "events",
+      "description": null,
+      "icon": "heroicons-outline:mail",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "green",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "customer_reply": {
+      "key": "customer_reply",
+      "name": "Customer Replied",
+      "nameI18nKey": "customer_replied",
+      "descriptionI18nKey": "runs_when_a_customer_replies_to",
+      "app": "events",
+      "description": null,
+      "icon": "heroicons-outline:chat-alt-2",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "green",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "inbound_trigger": {
+      "key": "inbound_trigger",
+      "name": "Inbound Trigger",
+      "nameI18nKey": "inbound_trigger",
+      "descriptionI18nKey": "trigger_description_inbound_trigger",
+      "app": "events",
+      "description": null,
+      "icon": "heroicons-outline:inbox",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "green",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "conv_ai_trigger": {
+      "key": "conv_ai_trigger",
+      "name": "Conv Ai Trigger",
+      "nameI18nKey": "conv_ai_trigger",
+      "descriptionI18nKey": null,
+      "app": "events",
+      "description": null,
+      "icon": "mage:stars-a",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "blue",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "conv_ai_autonomous_trigger": {
+      "key": "conv_ai_autonomous_trigger",
+      "name": "Conv Ai Autonomous Trigger",
+      "nameI18nKey": "conv_ai_autonomous_trigger",
+      "descriptionI18nKey": null,
+      "app": "events",
+      "description": null,
+      "icon": "mage:stars-a",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "blue",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "form_submission": {
+      "key": "form_submission",
+      "name": "Form Submitted",
+      "nameI18nKey": "form_submitted",
+      "descriptionI18nKey": "activates_upon_submission_of_the_chosen",
+      "app": "events",
+      "description": null,
+      "icon": "heroicons-outline:clipboard-list",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "green",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "survey_submission": {
+      "key": "survey_submission",
+      "name": "Survey Submitted",
+      "nameI18nKey": "survey_submitted",
+      "descriptionI18nKey": "fires_when_the_contact_completes_the",
+      "app": "events",
+      "description": null,
+      "icon": "heroicons-outline:clipboard-list",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "green",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "trigger_link": {
+      "key": "trigger_link",
+      "name": "Trigger Link Clicked",
+      "nameI18nKey": "trigger_link_clicked",
+      "descriptionI18nKey": "runs_when_the_tracked_link_in",
+      "app": "events",
+      "description": null,
+      "icon": "heroicons-outline:cursor-click",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "green",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "facebook_lead_gen": {
+      "key": "facebook_lead_gen",
+      "name": "Facebook Lead Form Submitted",
+      "nameI18nKey": "facebook_lead_form_submitted",
+      "descriptionI18nKey": "fires_each_time_your_fb_lead",
+      "app": "events",
+      "description": null,
+      "icon": "heroicons-outline:clipboard-list",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "green",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "tik_tok_form_submitted": {
+      "key": "tik_tok_form_submitted",
+      "name": "Tiktok Form Submitted",
+      "nameI18nKey": "tiktok_form_submitted",
+      "descriptionI18nKey": "activates_when_a_tiktok_leadgen_form",
+      "app": "events",
+      "description": null,
+      "icon": "ic:baseline-tiktok",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "green",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "video_event": {
+      "key": "video_event",
+      "name": "Video Tracking",
+      "nameI18nKey": "video_tracking",
+      "descriptionI18nKey": "triggers_when_a_contact_reaches_the",
+      "app": "events",
+      "description": null,
+      "icon": "clarity:video-gallery-line",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "green",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "validation_error": {
+      "key": "validation_error",
+      "name": "Number Validation",
+      "nameI18nKey": "number_validation",
+      "descriptionI18nKey": "fires_after_a_phone_number_passes",
+      "app": "events",
+      "description": null,
+      "icon": "heroicons-outline:exclamation",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "green",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "appointment": {
+      "key": "appointment",
+      "name": "Appointment Status",
+      "nameI18nKey": "appointment_status",
+      "descriptionI18nKey": "fires_on_status_change_booked_cancelled",
+      "app": "appointments",
+      "description": null,
+      "icon": "heroicons-outline:calendar",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "customer_appointment": {
+      "key": "customer_appointment",
+      "name": "Customer Booked Appointment",
+      "nameI18nKey": "customer_booked_appointment",
+      "descriptionI18nKey": "activates_when_a_customer_books_via",
+      "app": "appointments",
+      "description": null,
+      "icon": "bx:calendar-check",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "opportunity_status_changed": {
+      "key": "opportunity_status_changed",
+      "name": "Opportunity Status Changed",
+      "nameI18nKey": "opportunity_status_changed",
+      "descriptionI18nKey": "triggers_when_an_opportunitys_status_is",
+      "app": "opportunities",
+      "description": null,
+      "icon": "heroicons-outline:switch-horizontal",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "opportunity_created": {
+      "key": "opportunity_created",
+      "name": "Opportunity Created",
+      "nameI18nKey": "opportunity_created",
+      "descriptionI18nKey": "runs_at_the_moment_a_new",
+      "app": "opportunities",
+      "description": null,
+      "icon": "heroicons-outline:switch-horizontal",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "opportunity_changed": {
+      "key": "opportunity_changed",
+      "name": "Opportunity Changed",
+      "nameI18nKey": "opportunity_changed",
+      "descriptionI18nKey": "fires_on_field_updates_within_an",
+      "app": "opportunities",
+      "description": null,
+      "icon": "heroicons-outline:switch-horizontal",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "pipeline_stage_updated": {
+      "key": "pipeline_stage_updated",
+      "name": "Pipeline Stage Changed",
+      "nameI18nKey": "pipeline_stage_changed",
+      "descriptionI18nKey": "activates_when_an_opportunity_moves_pipeline",
+      "app": "opportunities",
+      "description": null,
+      "icon": "heroicons-outline:refresh",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "opportunity_decay": {
+      "key": "opportunity_decay",
+      "name": "Stale Opportunities",
+      "nameI18nKey": "stale_opportunities",
+      "descriptionI18nKey": "triggers_opportunities_idle_longer_than_x",
+      "app": "opportunities",
+      "description": null,
+      "icon": "fa-solid:thermometer-empty",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "affiliate_created": {
+      "key": "affiliate_created",
+      "name": "Affiliate Created",
+      "nameI18nKey": "affiliate_created",
+      "descriptionI18nKey": "runs_when_a_new_affiliate_signs",
+      "app": "affiliates",
+      "description": null,
+      "icon": "ic:outline-handshake",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "category_started": {
+      "key": "category_started",
+      "name": "Category Started",
+      "nameI18nKey": "category_started",
+      "descriptionI18nKey": "runs_when_a_learner_begins_a",
+      "app": "courses",
+      "description": null,
+      "icon": "heroicons-outline:view-grid",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "category_completed": {
+      "key": "category_completed",
+      "name": "Category Completed",
+      "nameI18nKey": "category_completed",
+      "descriptionI18nKey": "activates_on_finishing_all_lessons_in",
+      "app": "courses",
+      "description": null,
+      "icon": "heroicons-outline:view-grid",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "lesson_started": {
+      "key": "lesson_started",
+      "name": "Lesson Started",
+      "nameI18nKey": "lesson_started",
+      "descriptionI18nKey": "fires_when_a_lesson_is_opened",
+      "app": "courses",
+      "description": null,
+      "icon": "heroicons-outline:check-circle",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "lesson_completed": {
+      "key": "lesson_completed",
+      "name": "Lesson Completed",
+      "nameI18nKey": "lesson_completed",
+      "descriptionI18nKey": "runs_when_the_lessons_completion_criteria",
+      "app": "courses",
+      "description": null,
+      "icon": "heroicons-outline:check-circle",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "membership_contact_created": {
+      "key": "membership_contact_created",
+      "name": "Membership New Signup",
+      "nameI18nKey": "membership_new_signup",
+      "descriptionI18nKey": "activates_when_a_user_signs_up",
+      "app": "courses",
+      "description": null,
+      "icon": "ant-design:user-add-outlined",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "offer_access_granted": {
+      "key": "offer_access_granted",
+      "name": "Offer Access Granted",
+      "nameI18nKey": "offer_access_granted",
+      "descriptionI18nKey": "fires_when_a_user_gains_access_to_offer",
+      "app": "courses",
+      "description": null,
+      "icon": "ic:outline-bookmark-add",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "offer_access_removed": {
+      "key": "offer_access_removed",
+      "name": "Offer Access Removed",
+      "nameI18nKey": "offer_access_removed",
+      "descriptionI18nKey": "activates_when_a_user_loses_access",
+      "app": "courses",
+      "description": null,
+      "icon": "ic:outline-bookmark-remove",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "product_access_granted": {
+      "key": "product_access_granted",
+      "name": "Product Access Granted",
+      "nameI18nKey": "product_access_granted",
+      "descriptionI18nKey": "runs_when_a_product_is_granted",
+      "app": "courses",
+      "description": null,
+      "icon": "heroicons-outline:check",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "product_access_removed": {
+      "key": "product_access_removed",
+      "name": "Product Access Removed",
+      "nameI18nKey": "product_access_removed",
+      "descriptionI18nKey": "fires_on_product_access_revocation",
+      "app": "courses",
+      "description": null,
+      "icon": "heroicons-outline:trash",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "product_started": {
+      "key": "product_started",
+      "name": "Product Started",
+      "nameI18nKey": "product_started",
+      "descriptionI18nKey": "activates_when_first_module_of_a",
+      "app": "courses",
+      "description": null,
+      "icon": "heroicons-outline:check-circle",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "product_completed": {
+      "key": "product_completed",
+      "name": "Product Completed",
+      "nameI18nKey": "product_completed",
+      "descriptionI18nKey": "fires_when_all_modules_of_a",
+      "app": "courses",
+      "description": null,
+      "icon": "heroicons-outline:check-circle",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "user_log_in": {
+      "key": "user_log_in",
+      "name": "User Login",
+      "nameI18nKey": "user_login",
+      "descriptionI18nKey": "triggers_on_each_successful_portal_login",
+      "app": "courses",
+      "description": null,
+      "icon": "heroicons-outline:user",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "invoice": {
+      "key": "invoice",
+      "name": "Invoice",
+      "nameI18nKey": "invoice",
+      "descriptionI18nKey": "fires_on_invoice_creation_send_or",
+      "app": "payments",
+      "description": null,
+      "icon": "la:file-invoice-dollar",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "payment_received": {
+      "key": "payment_received",
+      "name": "Payment Received",
+      "nameI18nKey": "payment_received",
+      "descriptionI18nKey": "activates_when_a_payment_record_posts",
+      "app": "payments",
+      "description": null,
+      "icon": "heroicons-outline:clipboard-list",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "two_step_form_submission": {
+      "key": "two_step_form_submission",
+      "name": "Order Form Submission",
+      "nameI18nKey": "order_form_submission",
+      "descriptionI18nKey": "runs_when_an_order_form_is",
+      "app": "payments",
+      "description": null,
+      "icon": "heroicons-outline:clipboard-list",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "order_submission": {
+      "key": "order_submission",
+      "name": "Order Submitted",
+      "nameI18nKey": "order_submitted",
+      "descriptionI18nKey": "fires_after_checkout_completion_in_funnelstore",
+      "app": "payments",
+      "description": null,
+      "icon": "heroicons-outline:clipboard-list",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "shopify_abandoned_cart": {
+      "key": "shopify_abandoned_cart",
+      "name": "Abandoned Checkout",
+      "nameI18nKey": "abandoned_checkout",
+      "descriptionI18nKey": "activates_when_a_cart_is_left",
+      "app": "shopify",
+      "description": null,
+      "icon": "mdi:cart-remove",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "shopify_order_placed": {
+      "key": "shopify_order_placed",
+      "name": "Order Placed",
+      "nameI18nKey": "order_placed",
+      "descriptionI18nKey": "fires_on_new_order_creation_in",
+      "app": "shopify",
+      "description": null,
+      "icon": "heroicons-outline:check",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "shopify_order_fulfilled": {
+      "key": "shopify_order_fulfilled",
+      "name": "Order Fulfilled",
+      "nameI18nKey": "order_fulfilled",
+      "descriptionI18nKey": "activates_when_an_order_is_marked",
+      "app": "shopify",
+      "description": null,
+      "icon": "mdi:cart-check",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "primary",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "ivr_incoming_call": {
+      "key": "ivr_incoming_call",
+      "name": "Start Ivr Trigger",
+      "nameI18nKey": "start_ivr_trigger",
+      "descriptionI18nKey": "runs_when_your_ivr_receives_an",
+      "app": "ivr",
+      "description": null,
+      "icon": "whh:circlecalloutgoing",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": null,
+        "labsKey": "workflows.ivr"
+      },
+      "source": "spa-bundle"
+    },
+    "facebook_comment_on_post": {
+      "key": "facebook_comment_on_post",
+      "name": "Facebook Comment On Post",
+      "nameI18nKey": "facebook_comment_on_post",
+      "descriptionI18nKey": "fires_on_new_comments_on_the",
+      "app": "fb_ig_events",
+      "description": null,
+      "icon": "ri:messenger-fill",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "green",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
+    },
+    "ig_comment_on_post": {
+      "key": "ig_comment_on_post",
+      "name": "Instagram Comment On Post",
+      "nameI18nKey": "instagram_comment_on_post",
+      "descriptionI18nKey": "activates_upon_ig_post_comment_from",
+      "app": "fb_ig_events",
+      "description": null,
+      "icon": "ri:instagram-fill",
+      "type": null,
+      "filters": [],
+      "_bundleMeta": {
+        "color": "green",
+        "labsKey": null
+      },
+      "source": "spa-bundle"
     }
   }
 }
